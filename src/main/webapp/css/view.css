@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* view */
+#index_view {
+	/*width: 640px;*/
+	/*float: left;*/
+	margin: 20px 0;
+	overflow: hidden;
+	color: #333;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.9);
+	padding: 10px;
+}
+#index_view ul {
+	padding: 0 30px 15px 30px;
+	overflow: hidden
+}
+#index_view ul p {
+	line-height: 2rem;
+    margin: 10px 0;
+    /*段落缩进*/
+    text-indent: 2em;
+    font-size: 16px;
+}
+#index_view ul img {
+	width: 100%;
+	border-radius: 6px;;
+	text-align: center;
+	display: block;
+	margin: auto;
+	text-indent: 0em
+}
+.c_titile {
+	text-align: center;
+	font-size: 22px;
+	margin: 20px 0;
+	color: #000
+}
+.box {
+	border: #ccc 1px dashed;
+	text-align: center;
+	padding: 5px 0;
+	margin: 0 30px 10px 30px;
+	color: #666
+}
+.box span {
+	margin: 0 10px
+}
+/* 评论区 */
+#msgs>li{
+   	border-left: #111 2px solid;
+    padding: 10px 0;
+}
+#msgs > .title{
+    color: white;
+    font-size: 20px;
+    /*padding-left: 10px;*/
+    line-height: 2em;
+    border-bottom: 2px solid #111;
+    margin-bottom: 20px;
+}
+#msgs > .title > span{
+	background: #111;
+    padding: 10px 20px;
+}
+#msgs .msg{
+    background: #222;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, .1), inset 0px 1px 1px rgba(0, 0, 0, .7);
+    color: #b9b9b9;
+    border-radius: 6px;
+    margin-left: 30px;
+    position: relative;
+}
+#msgs .msg .msgti{
+	width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0px 20px 22px 0px;
+    border-color: transparent #111 transparent transparent;
+    position: absolute;
+    left: -20px;
+    top: 20px;
+}
+#msgs .msg .msgci{
+	width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: -38px;
+    top: 14px;
+    background: #000;
+    border: 2px solid #333;
+}
+#msgs .msg .msgtime{
+	background: rgba(1, 1, 1, 0.3);
+    border-radius:6px 6px 0 0 ;
+    padding: 0 10px;
+}
+#msgs .msg .msgtime>li{
+	line-height: 26px;
+    display: inline;
+    font-size: 11px;
+    margin-right: 10px; 
+} 
+#msgs .msg .textinfo{
+    padding: 10px;
+    text-indent: 2em;
+    line-height: 1.5rem; 
+}  
+.send-msg{
+   margin-top: 20px;
+}
+.send-msg > textarea{
+	width: 98%;
+    color: white;
+    font-size: 18px;
+    background: #222;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, .1), inset 0px 1px 1px rgba(0, 0, 0, .7);
+    border-radius: 6px;
+    border: none;
+    padding: 10px;
+}
+.btn{
+	text-align: right;
+}
+.btn > input{
+	padding: 6px 40px;
+    color: white;
+    background-color: rgba(17, 17, 17, 0.6);
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+}
+.btn > input:hover{
+	outline：none;
+	background-color: rgba(17, 17, 17, 0.9);
+}
+.btn > input:focus{
+	outline：none;
+	background-color: rgba(17, 17, 17, 0.9);
+}
+    
