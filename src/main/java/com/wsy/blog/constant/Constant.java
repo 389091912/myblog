@@ -11,16 +11,8 @@ public interface Constant {
 	/**
 	 * 禁用状态
 	 */
+	int STATUS_DISABLE = 1;
 
-	/**
-	 * 用户角色admin
-	 */
-	String USER_ROLE_ADMIN = "admin";
-	/**
-	 * 用户角色normal
-	 */
-	String USER_ROLE_NORMAL = "normal";
-	
 	/**
 	 * 过滤器默认字符集
 	 */
