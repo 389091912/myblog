@@ -15,9 +15,9 @@ public interface CommentService {
 
     public void addComment(Comment comment);
 
-    public List<Comment> findCommentsByAjax(Comment comment);
+    public List<Comment> findAllComment(Comment comment);
 
-    public PageInfo<Comment> findAllComment(int pageNo, Comment comment);
+    public PageInfo<Comment> findCommentsByAjax(int pageNo, Comment comment);
 
 
 }

@@ -2,7 +2,10 @@ package com.wsy.blog.service;
 
 import com.github.pagehelper.PageInfo;
 import com.wsy.blog.entity.Blog;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -14,10 +17,12 @@ import java.util.List;
 public interface BlogService {
 
 
-    public void addBlog(Blog blog);
+    public void addBlog(Blog blog, @RequestParam CommonsMultipartFile commonsMultipartFile, HttpSession session);
 
     public List<Blog> findAllBlog(Blog blog);
 
     public PageInfo<Blog> findBlogByAjax(int pageNo, Blog blog);
+
+    public Blog findBlogById(Integer id);
 
 }

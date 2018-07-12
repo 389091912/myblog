@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -29,7 +31,7 @@ public class BlogServiceImpl implements BlogService {
 
 
     @Override
-    public void addBlog(Blog blog) {
+    public void addBlog(Blog blog, CommonsMultipartFile commonsMultipartFile, HttpSession session) {
 
     }
 
@@ -50,4 +52,13 @@ public class BlogServiceImpl implements BlogService {
 
         return pageInfo;
     }
+
+    @Override
+    public Blog findBlogById(Integer id) {
+
+        Blog blog = blogDao.selectByPrimaryKey( id );
+
+        return blog;
+    }
+
 }

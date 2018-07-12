@@ -21,5 +21,12 @@ public class ParameterUtil {
 		}
 		return s;
 	}
+	/*public static void main(String[] args) {
+		double x=2;
+		double y;
 
+		y=x+3/2;
+
+		System.out.println( y );
+	}*/
 }

@@ -63,9 +63,24 @@
 <!--mainbody end-->
 <footer>
     <div class="footer-bottom">
-        <p>2017年10月14日</p>
+        <p id="timeTemplate">2018年10月14日</p>
     </div>
 </footer>
+
+<script>
+
+    $(()=>{
+
+        let date= new Date();
+        let month = (date.getMonth() + 1).toString().padStart(2,'0');
+        let day=String(date.getDate()).padStart(2,"0");
+        let time = date.getFullYear() + "年" + month  + "月" + day+"日";
+
+        $("#timeTemplate").text(time);
+        console.log(time);
+    });
+
+</script>
 <!-- jQuery仿腾讯回顶部和建议 代码开始 -->
 <div id="tbox">
     <a id="gotop" href="javascript:void(0)"></a>

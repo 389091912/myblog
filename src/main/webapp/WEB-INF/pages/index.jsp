@@ -28,15 +28,11 @@
         let myPageNo = 1;
         $("#loadDataUserIdInput").val("");//清空缓存
 
-        let loadData1=()=>{
+       let loadData1=()=>{
             let data = {
                 "pageNo": 1,
                 "id": $("#loadDataUserIdInput").val()
-                /*
-                    "createDate": ""
-                */
             };
-
             $.ajax({
                 "type": "post",
                 "dataType": "json",
@@ -64,14 +60,15 @@
             });
 
         };
-       loadData1();
-
+         loadData1();
 
         function loadData(){
             let data = {
                 "pageNo": 1,
-                "id": $("#loadDataUserIdInput").val()/*,
-                "createDate": ""*/
+                "id": $("#loadDataUserIdInput").val()
+                  /*
+                    "createDate": ""
+                */
             };
           /*  console.log("data===", data);*/
             $.ajax({
@@ -101,6 +98,21 @@
                 }
             });
         }
+    </script>
+
+
+    <script>
+
+      /*  $( ()=> {
+
+            $("#").click(function () {
+
+
+            });
+
+
+        });*/
+
 
     </script>
 </head>
@@ -173,7 +185,7 @@
                         <!--圆形-->
                         <div class="ci"></div>
                         <h2 class="title">
-                            <a href="/" target="_blank">{{blog.title}}</a>
+                            <a href="${pageContext.request.contextPath}/blog/findBlogById?id={{blog.id}}"  target="_blank">{{blog.title}}</a>
                         </h2>
                         <ul class="textinfo">
                             <a href="/">
@@ -269,9 +281,24 @@
 <!--mainbody end-->
 <footer>
     <div class="footer-bottom">
-        <p>2017年10月14日</p>
+        <p id="timeTemplate">2018年10月14日</p>
     </div>
 </footer>
+
+<script>
+
+    $(()=>{
+
+        let date = new Date();
+        let month = (date.getMonth() + 1).toString().padStart(2,'0');
+        let day=String(date.getDate()).padStart(2,"0");
+        let time = date.getFullYear() + "年" + month  + "月" + day+"日";
+
+        $("#timeTemplate").text(time);
+        console.log(time);
+    });
+
+</script>
 <!-- jQuery仿腾讯回顶部和建议 代码开始 -->
 <div id="tbox">
     <a id="gotop" href="javascript:void(0)"></a>
