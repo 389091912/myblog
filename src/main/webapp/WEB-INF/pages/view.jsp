@@ -164,18 +164,19 @@
 
                     $.ajax({
                         type: "post",
-                        url: "",
+                        url: "${pageContext.request.contextPath}/comment/addComment",
                         data: {
                             "blogId": $("#blogId").val(),
                             "content": $("#commentContent").val()
                         },
                         dataType: "json",
-                        success: (result) => {
+                        success: () => {
 
+                            ajaxLoadData({
+                                'pageNo': 1,
+                                'blogId': $("#blogId").val()
+                            });
 
-                        },
-                        error:()=> {
-                            alert("ajax错误")
                         }
 
                     });

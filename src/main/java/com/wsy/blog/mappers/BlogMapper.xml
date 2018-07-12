@@ -100,7 +100,7 @@
      b.create_date createDate,
      b.image_path imagePath,
      max(t.comment_date) recentlyDate,
-     count(1) commentSum
+     count(t.blog_id) commentSum
   </sql>
 
   <resultMap id="BlogMap" type="com.wsy.blog.entity.Blog" >
@@ -123,14 +123,14 @@
     SELECT <include refid="blogColumn"/>
     FROM t_blog b
     LEFT JOIN t_comment t ON b.id = t.blog_id
-   <!-- <trim prefix="where" prefixOverrides="AND|OR">
-      <if test="id!=null">
-        and id &lt; #{id}
-      </if>
-      <if test="title!=null and title!=''" >
-        and r.title like concat('%',concat(#{title},'%'))
-      </if>
-    </trim>-->
+      <trim prefix="where" prefixOverrides="AND|OR">
+        <if test="id!=null">
+          and b.id &lt; #{id}
+        </if>
+        <if test="title!=null and title!=''" >
+          and b.title like concat('%',concat(#{title},'%'))
+        </if>
+      </trim>
       GROUP BY b.id
       ORDER by b.create_date desc
   </select>

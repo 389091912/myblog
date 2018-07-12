@@ -2,6 +2,7 @@ package com.wsy.blog.service;
 
 import com.github.pagehelper.PageInfo;
 import com.wsy.blog.entity.Blog;
+import org.apache.commons.fileupload.FileUploadException;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
@@ -17,7 +18,7 @@ import java.util.List;
 public interface BlogService {
 
 
-    public void addBlog(Blog blog, @RequestParam CommonsMultipartFile commonsMultipartFile, HttpSession session);
+    public void addBlog(Blog blog, @RequestParam CommonsMultipartFile file, HttpSession session) throws FileUploadException;
 
     public List<Blog> findAllBlog(Blog blog);
 

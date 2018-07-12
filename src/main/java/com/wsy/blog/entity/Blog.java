@@ -196,4 +196,5 @@ public class Blog {
 
         this.imagePath = imagePath == null ? null : imagePath.trim();
     }
+
 }

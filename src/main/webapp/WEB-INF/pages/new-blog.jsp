@@ -87,23 +87,22 @@
 </header>
 <!--header end-->
 <div class="blogs">
-    <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
+    <form action="${pageContext.request.contextPath}/blog/addBlog" method="post" class="form-horizontal" enctype="multipart/form-data">
     <div class="send-msg">
-
         <div>
-            <label for="" class="title-msg">文章标题</label>
-            <input type="text" class="title">
+            <label for="title" class="title-msg">文章标题</label>
+            <input type="text" class="title" name="title" id="title">
         </div>
         <div>
-            <label for="" class="title-msg">图片</label>
-            <input type="file" class="title" >
+            <label for="photo" class="title-msg">图片</label>
+            <input type="file" id="photo" class="title" name="file">
         </div>
         <div>
-            <label for="" class="title-msg">文章正文</label>
-            <textarea name="" rows="15"></textarea>
+            <label for="content" class="title-msg">文章正文</label>
+            <textarea name="content" id="content" rows="15" ></textarea>
         </div>
         <div class="btn">
-            <input type="button" name="" id="" value="发表">
+            <input type="submit" name="submit" id="submit" value="发表">
         </div>
     </div>
     </form>

@@ -60,10 +60,13 @@ public class CommentController {
     @ResponseBody
     public AjaxResult addComment(HttpServletRequest request, Comment comment) {
 
+        AjaxResult result = new AjaxResult();
         comment.setCommentDate( StringUtil.patternDate( new Date() ) );
         commentService.addComment( comment );
+        result.setSuccess( true );
 
-        return null;
+        System.out.println( "添加成功" );
+        return result;
     }
 
 }

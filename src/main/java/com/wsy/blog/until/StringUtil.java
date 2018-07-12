@@ -16,7 +16,12 @@ public class StringUtil {
         SimpleDateFormat dateFormat = new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
         return dateFormat.format( date );
     }
-
+    public static String  renameFileName(String fileName){
+        int dotIndex = fileName.lastIndexOf( "." );
+        String stuffix = fileName.substring( dotIndex );
+        String name = new SimpleDateFormat( "yyyyMMddHHmmss" ).format( new Date() );
+        return name+stuffix;
+    }
 
 
 }

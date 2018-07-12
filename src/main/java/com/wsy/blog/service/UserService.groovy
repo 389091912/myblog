@@ -1,5 +1,8 @@
 package com.wsy.blog.service
 
+import com.wsy.blog.entity.User
+import org.apache.ibatis.annotations.Param
+
 /**
  * Created by IntelliJ IDEA.
  * User: wsy
@@ -7,6 +10,15 @@ package com.wsy.blog.service
  * Time: 1:45
  */
 interface UserService {
-    void add()
+
+    void addUser(User user)
+
+    List<User> findAllUser()
+
+    List<User> findByAjax(User user)
+
+    User findByPrimaryKey(@Param("id") Integer id)
+
+    void modifyUser(User user)
 
 }

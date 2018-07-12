@@ -37,7 +37,7 @@ public class Swagger2 {
                 .title("Spring MVC  My_blog")
                 .description("my_blog 接口：http://google.com/")
                 .termsOfServiceUrl("http://google.com/")
-                .contact("王书亚")
+//                .contact("王书亚")
                 .version("1.0")
                 .build();
     }

@@ -6,6 +6,7 @@ import com.wsy.blog.service.BlogService;
 import com.wsy.blog.until.StringUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.fileupload.FileUploadException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -76,7 +77,14 @@ public class BlogController {
     @RequestMapping(value ="/addBlog",method = RequestMethod.POST)
     public String addBlog(HttpServletRequest request, Blog blog,@RequestParam CommonsMultipartFile file) {
 
-        blog.setCreateDate( StringUtil.patternDate( new Date() ) );
+
+        try {
+            blogService.addBlog( blog, file, request.getSession() );
+        } catch (FileUploadException e) {
+            e.printStackTrace();
+        }
+
+
         return "redirect:/index";
     }
 
